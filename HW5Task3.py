@@ -16,8 +16,8 @@ from scipy import stats
 data = pd.Series(
     [202, 203, 199, 197, 195, 201, 200, 204, 194, 190])
 
-tn = (200 - 198.5) / (
-        np.std(data, ddof=1) / (np.sqrt(10)))  # 1.0651 - рассчетное
+tn = (198.5-200) / (
+        np.std(data, ddof=1) / (np.sqrt(10)))  # -1.0651 - рассчетное
 print(round(tn, 4))
 
 alpha = 0.01
