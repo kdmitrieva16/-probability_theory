@@ -20,12 +20,11 @@ tn = (200 - 198.5) / (
         np.std(data, ddof=1) / (np.sqrt(10)))  # 1.0651 - рассчетное
 print(round(tn, 4))
 
-alfa = 0.01
-n = data.count()
-t0 = stats.t.ppf(alfa / 2, df=2 * (n - 1))
-t1 = stats.t.ppf(1 - alfa / 2, df=2 * (n - 1))
+alpha = 0.01
+n = len(data)
+t0 = stats.t.ppf(alpha / 2, df=n - 1)
+t1 = stats.t.ppf(1 - alpha / 2, df=n - 1)
 print(f'табличное   : {round(t0, 4)} , {round(t1, 4)} ')
-
 
 # т.к.  t0 < tn < t1 Нулевая гипотеза принимается - средний вес пачки печенья
 # составляет 200 г.
